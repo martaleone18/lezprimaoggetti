@@ -17,6 +17,15 @@ public class Alunno {
     private String cognome;
     private String nome;
     private int voto;
+    private int ammisisoneEsame;
+
+    public int getAmmisisoneEsame() {
+        return ammisisoneEsame;
+    }
+
+    public void setAmmisisoneEsame(int ammisisoneEsame) {
+        this.ammisisoneEsame = ammisisoneEsame;
+    }
     private LocalDateTime datanascita;
     String segnoZodiacale;
     //costruttore metodo con stesso nome della classe
