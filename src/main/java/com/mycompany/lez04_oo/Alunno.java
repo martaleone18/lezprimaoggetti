@@ -21,21 +21,30 @@ public class Alunno {
     String segnoZodiacale;
     //costruttore metodo con stesso nome della classe
 
-    public Alunno() {
-        cognome = "";
+    public Alunno(String cognome, String nome, int voto) {
+        this.cognome = cognome;
+        this.nome = nome;
+        this.voto = voto;
+    }
+
+    public Alunno(String newcognome) {
+        String okcognome;
+        if (newcognome.length()>50) //tagliare
+            newcognome = newcognome.substring(0,50);
+        else
+            okcognome=newcognome;
+        
+        cognome =newcognome.toUpperCase();
         nome = "";
-        voto = 10;
         datanascita = LocalDateTime.now();
-        segnoZodiacale = "pesci";
+        //voto = 10;
         int anno = datanascita.getYear();
-if (anno== 2019) segnoZodiacale = "Drago";
+if (anno== 2018) segnoZodiacale = "Drago";
 if (anno== 2019) segnoZodiacale = "Serpente";
 if (anno== 2020) segnoZodiacale = "Topo";
 
-
-
-
     }
+    
 
     public LocalDateTime getDatanascita() {
 
