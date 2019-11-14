@@ -24,15 +24,15 @@ public class MainStart {
         // TODO code application logic here
 
         Alunno a1;
-        a1 = new Alunno();
-        a1.cognome = "rossi";
+        a1 = new Alunno("rossi");
+        //a1.cognome "rossi";
         a1.nome = "mario";
         a1.voto = 10;
         long milsec = 4000;
         Thread.sleep(milsec);
 
-        Alunno a2 = new Alunno();
-        a2.cognome = "leone";
+        Alunno a2 = new Alunno("leone");
+        //a2.cognome = "leone";
         a2.nome = "marta";
         a2.voto = 9;
         LocalDateTime ddd= a2.getDatanascita();
