@@ -14,12 +14,37 @@ import java.time.format.DateTimeFormatter;
  */
 public class Alunno {
 
-    String cognome;
-    String nome;
-    int voto;
+    private String cognome;
+    private String nome;
+    private int voto;
     private LocalDateTime datanascita;
     String segnoZodiacale;
     //costruttore metodo con stesso nome della classe
+   
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getVoto() {
+        return voto;
+    }
+
+    public String getSegnoZodiacale() {
+        return segnoZodiacale;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setVoto(int voto) {
+        this.voto = voto;
+    }
 
     public Alunno(String cognome, String nome, int voto) {
         this.cognome = cognome;
@@ -27,24 +52,38 @@ public class Alunno {
         this.voto = voto;
     }
 
+    public Alunno(String cognome, String nome) {
+        this.cognome = cognome;
+        this.nome = nome;
+    }
+
     public Alunno(String newcognome) {
-        String okcognome;
-        if (newcognome.length()>50) //tagliare
-            newcognome = newcognome.substring(0,50);
-        else
-            okcognome=newcognome;
-        
-        cognome =newcognome.toUpperCase();
+        String okcognome = "";
+        if (newcognome.length() > 50) //tagliare
+        {
+            newcognome = newcognome.substring(0, 50);
+        } else {
+            okcognome = newcognome;
+        }
+
+        cognome = newcognome.toUpperCase();
+        this.cognome = okcognome;
+
         nome = "";
         datanascita = LocalDateTime.now();
         //voto = 10;
         int anno = datanascita.getYear();
-if (anno== 2018) segnoZodiacale = "Drago";
-if (anno== 2019) segnoZodiacale = "Serpente";
-if (anno== 2020) segnoZodiacale = "Topo";
+        if (anno == 2018) {
+            segnoZodiacale = "Drago";
+        }
+        if (anno == 2019) {
+            segnoZodiacale = "Serpente";
+        }
+        if (anno == 2020) {
+            segnoZodiacale = "Topo";
+        }
 
     }
-    
 
     public LocalDateTime getDatanascita() {
 
