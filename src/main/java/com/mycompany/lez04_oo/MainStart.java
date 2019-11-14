@@ -23,28 +23,31 @@ public class MainStart {
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
 
-        Alunno a1;
-        a1 = new Alunno("rossi");
+        Alunno a1 = new Alunno ("rossi", "mario", 100);
+        Esame es1 = new Esame ("database", 100);
+      
+        //a1 = new Alunno("rossi");
         //a1.cognome "rossi";
-        a1.nome = "mario";
-        a1.voto = 10;
+        //a1.nome = "mario";
+        //a1.voto = 10;
         long milsec = 4000;
         Thread.sleep(milsec);
 
-        Alunno a2 = new Alunno("leone");
+        Alunno a2 = new Alunno("leone", "marta", 100);
         //a2.cognome = "leone";
-        a2.nome = "marta";
-        a2.voto = 9;
+        //a2.nome = "marta";
+        //a2.voto = 9;
         LocalDateTime ddd= a2.getDatanascita();
 
         System.out.println(a1.getPresentazione());
         System.out.println(a2.getPresentazione());
-        if (a1.voto > a2.voto) {
-            System.out.println("bravo " + a1.cognome + " " + a1.nome);
+        if (a1.getVoto() > a2.getVoto()) {
+            System.out.println("bravo " + a1.getCognome() + " " + a1.getNome());
         } else {
-            System.out.println("bravo " + a2.cognome + " " + a2.nome);
+            System.out.println("bravo " + a2.getCognome() + " " + a2.getNome());
 
         }
+       
 
     }
 
