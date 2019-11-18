@@ -25,6 +25,12 @@ public class MainStart {
 
         Alunno a1 = new Alunno ("rossi", "mario", 100);
         Esame es1 = new Esame ("database", 100);
+        a1.setAmmissioneEsame(es1);
+        
+        int voto= a1.getAmmissioneEsame().getVotoEsame();
+        String esame = a1.getAmmissioneEsame().getNomeEsame();
+        System.out.println(esame + " voto " + " alunno " + a1.getCognome());
+        
       
         //a1 = new Alunno("rossi");
         //a1.cognome "rossi";
