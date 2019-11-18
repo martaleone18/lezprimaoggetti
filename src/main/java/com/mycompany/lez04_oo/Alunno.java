@@ -19,9 +19,40 @@ public class Alunno {
     private int voto;
     private Esame AmmissioneEsame;
     private Esame elencoEsami[];
-private LocalDateTime datanascita;
+    private LocalDateTime datanascita;
 
-    
+    //costruttore metodo con stesso nome classe
+    //aggiungo esame a libretto
+    public String getLibretto() {
+        String ris = "Esami fatti : \n";
+        for (int i = 0; i < elencoEsami.length; i++) {
+            //se l'elemento è null lo uso e gli assegno l'esame e poi me ne esco
+
+            if (elencoEsami[i] != null) {
+                ris += (i + 1) + " - " + elencoEsami[i].getNomeEsame() + " "
+                        + elencoEsami[i].getVotoEsame() + "\n";
+            } else {
+                break;
+            }
+        }
+        return ris;
+
+    }
+
+    public void addEsame(Esame newEsame) {
+        for (int i = 0; i < elencoEsami.length; i++) {
+            //se l'elemento è null lo uso e gli assegno l'esame e poi me ne esco
+
+            if (elencoEsami[i] == null) {
+                elencoEsami[i] = newEsame;
+
+                //esco dal ciclo se no riempio tutto con lo stesso esame
+                break;
+            }
+
+        }
+    }
+
     public Esame getAmmissioneEsame() {
         return AmmissioneEsame;
     }
@@ -37,13 +68,9 @@ private LocalDateTime datanascita;
     public void setElencoEsami(Esame[] elencoEsami) {
         this.elencoEsami = elencoEsami;
     }
-    
-    
 
-    String segnoZodiacale;
+    //String segnoZodiacale;
     //costruttore metodo con stesso nome della classe
-   
-
     public String getCognome() {
         return cognome;
     }
@@ -56,10 +83,9 @@ private LocalDateTime datanascita;
         return voto;
     }
 
-    public String getSegnoZodiacale() {
-        return segnoZodiacale;
-    }
-
+    //public String getSegnoZodiacale() {
+    //   return segnoZodiacale;
+    //}
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -68,10 +94,12 @@ private LocalDateTime datanascita;
         this.voto = voto;
     }
 
-    public Alunno(String cognome, String nome, int voto) {
+    public Alunno(String cognome, String nome, int numeroEsami) {
         this.cognome = cognome;
         this.nome = nome;
-        this.voto = voto;
+        elencoEsami = new Esame[numeroEsami];
+
+        //this.voto = voto; (int voto nei parametri)
     }
 
     public Alunno(String cognome, String nome) {
@@ -95,16 +123,16 @@ private LocalDateTime datanascita;
         datanascita = LocalDateTime.now();
         //voto = 10;
         int anno = datanascita.getYear();
-        if (anno == 2018) {
-            segnoZodiacale = "Drago";
-        }
-        if (anno == 2019) {
-            segnoZodiacale = "Serpente";
-        }
-        if (anno == 2020) {
-            segnoZodiacale = "Topo";
-        }
 
+        //  if (anno == 2018) {
+        //    segnoZodiacale = "Drago";
+        // }
+        // if (anno == 2019) {
+        //   segnoZodiacale = "Serpente";
+        // }
+        //if (anno == 2020) {
+        //  segnoZodiacale = "Topo";
+        //}
     }
 
     public LocalDateTime getDatanascita() {
@@ -112,21 +140,12 @@ private LocalDateTime datanascita;
         return datanascita;
     }
 
-    public String getPresentazione() {
-        String frase;
-        frase = "Mi chiamo " + cognome + " " + nome;
-        //sistemo la data
-        DateTimeFormatter myFormatIt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-
-        String dataOKIt = datanascita.format(myFormatIt);
-
-        frase += " e sono nato il " + dataOKIt;
-
-        return frase;
-    }
-
-    void setAmmisisoneEsame(Esame es1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    //  public String getPresentazione() {
+    //    String frase;
+    //  frase = "Mi chiamo " + cognome + " " + nome;
+    //sistemo la data
+    // DateTimeFormatter myFormatIt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    // String dataOKIt = datanascita.format(myFormatIt);
+    // frase += " e sono nato il " + dataOKIt;
+    // return frase;
 }
