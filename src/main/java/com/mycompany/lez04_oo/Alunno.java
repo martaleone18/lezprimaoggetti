@@ -17,16 +17,29 @@ public class Alunno {
     private String cognome;
     private String nome;
     private int voto;
-    private int ammisisoneEsame;
+    private Esame AmmissioneEsame;
+    private Esame elencoEsami[];
+private LocalDateTime datanascita;
 
-    public int getAmmisisoneEsame() {
-        return ammisisoneEsame;
+    
+    public Esame getAmmissioneEsame() {
+        return AmmissioneEsame;
     }
 
-    public void setAmmisisoneEsame(int ammisisoneEsame) {
-        this.ammisisoneEsame = ammisisoneEsame;
+    public void setAmmissioneEsame(Esame AmmissioneEsame) {
+        this.AmmissioneEsame = AmmissioneEsame;
     }
-    private LocalDateTime datanascita;
+
+    public Esame[] getElencoEsami() {
+        return elencoEsami;
+    }
+
+    public void setElencoEsami(Esame[] elencoEsami) {
+        this.elencoEsami = elencoEsami;
+    }
+    
+    
+
     String segnoZodiacale;
     //costruttore metodo con stesso nome della classe
    
@@ -110,6 +123,10 @@ public class Alunno {
         frase += " e sono nato il " + dataOKIt;
 
         return frase;
+    }
+
+    void setAmmisisoneEsame(Esame es1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
