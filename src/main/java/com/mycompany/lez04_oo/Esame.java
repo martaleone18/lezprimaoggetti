@@ -48,6 +48,8 @@ public class Esame {
     public int getVotoEsame() {
         return votoEsame;
     }
+    
+    
 
    
 
